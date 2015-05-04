@@ -51,9 +51,9 @@ class WP_Simple_Asset_Optimizer {
 	function run() {
 
 		// Get optimization data through filters.
-		$this->move                 = apply_filters( 'wpao_move',                  array() );
-		$this->move_if_not_enqueued = apply_filters( 'wpao_move_if_not_enqueued',  array() );
-		$this->inline               = apply_filters( 'wpao_inline',                array() );
+		$this->move                 = apply_filters( 'wpsao_move',                  array() );
+		$this->move_if_not_enqueued = apply_filters( 'wpsao_move_if_not_enqueued',  array() );
+		$this->inline               = apply_filters( 'wpsao_inline',                array() );
 
 		// Handle inlining.
 		$this->prepare_inline_assets();
