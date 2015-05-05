@@ -2,9 +2,9 @@
 
 WP Simple Asset Optimizer is a helper drop-in WordPress projects to optimize the loading of scripts and styles. It helps you intelligently move scrips to bottom and inline scripts and styles.
 
-# Examples
+## Examples
 
-## Moving scripts
+### Moving scripts
 
     add_filter( 'wpsao_move', function () {
     	return array(
@@ -18,7 +18,7 @@ WP Simple Asset Optimizer is a helper drop-in WordPress projects to optimize the
     	);
     } );
 
-## Moving scripts if others are not enqueued
+### Moving scripts if others are not enqueued
 
     add_filter( 'wpsao_move_if_not_enqueued', function () {
     	return array(
@@ -32,7 +32,7 @@ WP Simple Asset Optimizer is a helper drop-in WordPress projects to optimize the
     	);
     } );
 
-## Inlining
+### Inlining
 
     add_filter( 'wpsao_inline', function () {
     	return array(
