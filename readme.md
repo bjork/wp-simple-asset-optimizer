@@ -50,5 +50,8 @@ This helper was created by [Aki Björklund](http://akibjorklund.com/).
 
 ## Changelog ##
 
+**0.1.1**
+* Fix a PHP warning.
+
 **0.1**
 * Initial version.

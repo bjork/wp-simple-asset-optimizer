@@ -166,16 +166,17 @@ class WP_Simple_Asset_Optimizer {
 				$to_inline = $params;
 			}
 
-			$element = 'script';
-			if ( $this->wp_scripts->registered[ $to_inline ] ) {
+			if ( isset( $this->wp_scripts->registered[ $to_inline ] ) && $this->wp_scripts->registered[ $to_inline ] ) {
 				$asset = $this->wp_scripts->registered[ $to_inline ];
-			} else if ($this->wp_styles->registered[ $to_inline ] ) {
+				$element = 'script';
+			} else if ( isset( $this->wp_styles->registered[ $to_inline ] ) && $this->wp_styles->registered[ $to_inline ] ) {
 				$asset = $this->wp_styles->registered[ $to_inline ];
 				$element = 'style';
 			} else {
 				// Asset not found.
 				continue;
 			}
+
 			$src = $asset->src;
 			$dir = $this->src_to_dir( $src );
 
