@@ -50,6 +50,13 @@ This helper was created by [Aki Björklund](http://akibjorklund.com/).
 
 ## Changelog ##
 
+**0.2.1**
+* Fix a strict PHP error.
+* Minor coding style changes.
+
+**0.2.0**
+* Stop using globals `$wp_scripts` and `$wp_styles`.
+
 **0.1.1**
 * Fix a PHP warning.
 
