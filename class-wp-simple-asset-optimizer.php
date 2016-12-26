@@ -3,7 +3,7 @@
 /*
 ------------------------------------------------------------------------
 
-Copyright 2015 Aki Björklund.
+Copyright 2015–2016 Aki Björklund.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -72,14 +72,14 @@ class WP_Simple_Asset_Optimizer {
 
 	/**
 	 * Move script(s) to bottom
-	 * 
+	 *
 	 * @param string|array $script_handles Script handles to be moved to bottom
 	 * @param array        $args           Additional arguments. Defaults to array( 'move_deps' => false ). Set to true to also move scripts dependencies.
 	 */
 	protected function move_script_to_bottom( $script_handles, $args = array() ) {
 
 		$defaults = array(
-			'move_deps' => false
+			'move_deps' => false,
 		);
 
 		$args = wp_parse_args( $args, $defaults );
@@ -113,7 +113,7 @@ class WP_Simple_Asset_Optimizer {
 
 	/**
 	 * Move script(s) to bottom if none of scripts as the second parameter are enqueued.
-	 * 
+	 *
 	 * @param string|array $script_handles            Script handles to be moved to bottom
 	 * @param string|array $dependency_script_handles Script handles that cannot be enqueued
 	 */
@@ -150,7 +150,7 @@ class WP_Simple_Asset_Optimizer {
 			}
 			if ( wp_script_is( $to_inline ) ) {
 				wp_dequeue_script( $to_inline );
-			} else if ( wp_style_is( $to_inline ) ) {
+			} elseif ( wp_style_is( $to_inline ) ) {
 				wp_dequeue_style( $to_inline );
 			}
 		}
@@ -169,7 +169,7 @@ class WP_Simple_Asset_Optimizer {
 			if ( isset( $this->wp_scripts->registered[ $to_inline ] ) && $this->wp_scripts->registered[ $to_inline ] ) {
 				$asset = $this->wp_scripts->registered[ $to_inline ];
 				$element = 'script';
-			} else if ( isset( $this->wp_styles->registered[ $to_inline ] ) && $this->wp_styles->registered[ $to_inline ] ) {
+			} elseif ( isset( $this->wp_styles->registered[ $to_inline ] ) && $this->wp_styles->registered[ $to_inline ] ) {
 				$asset = $this->wp_styles->registered[ $to_inline ];
 				$element = 'style';
 			} else {
@@ -195,7 +195,7 @@ class WP_Simple_Asset_Optimizer {
 	/**
 	 * Convert a url to a WordPress content resource to a file path
 	 * @param string $src Url.
-	 * @return string|bool File path of the resource or false, if not .
+	 * @return string|bool File path of the resource or false if not.
 	 */
 	protected function src_to_dir( $src ) {
 
@@ -220,7 +220,7 @@ class WP_Simple_Asset_Optimizer {
 			return false;
 		}
 
-		// Some other type of resouce not controlled by WordPress.
+		// Some other type of resource not controlled by WordPress.
 		return false;
 	}
 }
