@@ -20,12 +20,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 -----------------------------------------------------------------------
 
-Version: 0.2.0
+Version: 0.2.1
 
 */
 
 require_once( 'class-wp-simple-asset-optimizer.php' );
 
 add_action( 'init', function () {
-	new WP_Simple_Asset_Optimizer( wp_scripts(), wp_styles() );
+	$wp_scripts = wp_scripts();
+	$wp_styles = wp_styles();
+	new WP_Simple_Asset_Optimizer( $wp_scripts, $wp_styles );
 } );
